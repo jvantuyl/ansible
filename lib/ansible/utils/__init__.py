@@ -482,6 +482,20 @@ def boolean(value):
     else:
         return False
 
+def lreplace(old, new, string):
+    '''
+     If the string starts with the substring old, replace it with substring new and return
+     a copy of the string.
+     '''
+    return string[len(old):] + new if string.startswith(old) else string
+
+def rreplace(old, new, string):
+    '''
+     If the string ends with the substring old, replace it with substring new and return a
+     copy of the string.
+     '''
+    return string[:-len(old)] + new if string.endswith(old) else string
+
 def compile_when_to_only_if(expression):
     ''' 
     when is a shorthand for writing only_if conditionals.  It requires less quoting
